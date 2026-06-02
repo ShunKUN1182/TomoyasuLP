@@ -2,7 +2,23 @@
 import img01 from "../assets/pickup_items_img01.png";
 import img02 from "../assets/pickup_items_img02.png";
 import img03 from "../assets/pickup_items_img03.png";
+import PickUPItem from "./PickUPItem.astro";
 
+const pickupItemProps = [
+  {
+    imgPath: img01,
+    title: "DIYスタイル",
+  },
+  {
+    imgPath: img02,
+    title: "ARAS",
+  },
+  {
+    imgPath: img03,
+    title: "ランタン",
+  },
+
+]
 ---
 
 <style>
@@ -43,18 +59,8 @@ import img03 from "../assets/pickup_items_img03.png";
 <div class="pickup_wrap">
   <h2>PICK UP</h2>
   <div class="pickup_items">
-    <div>
-      <img src={img01.src} alt="">
-      <h3>DIYスタイル</h3>
-    </div>
-    <div>
-      <img src={img02.src} alt="">
-      <h3>ARAS</h3>
-    </div>
-    <div>
-      <img src={img03.src} alt="">
-      <h3>ランタン</h3>
-    </div>
-
+    {pickupItemProps.map((props)=>(
+        <PickUPItem imgPath={props.imgPath} title={props.title}/>
+    ))}
   </div>
 </div>

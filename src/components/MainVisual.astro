@@ -47,9 +47,20 @@ import forkAndSpun from "../assets/forkAndSpun.png";
       border-radius: 100%;
       top: 0;
       left: 0;
-      background: radial-gradient(transparent 99%,#FDFFE2 100%);
-      animation: light 3s infinite linear;
+      background: radial-gradient(transparent 45%,#FDFFE2 100%);
+      animation: light 2s infinite;
     }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(transparent 45%,#FDFFE2 100%);
+    }
+
   }
   .mainVisualImg02 {
     right: -20px;
@@ -104,13 +115,13 @@ import forkAndSpun from "../assets/forkAndSpun.png";
 }
 @keyframes light {
   0% {
-    background: radial-gradient(transparent 99%,#FDFFE2 100%);
+      transform: scale(100%,100%);
   }
   50% {
-    background: radial-gradient(transparent 45%,#FDFFE2 100%);
+      transform: scale(110%,110%);
   }
   100% {
-    background: radial-gradient(transparent 99%,#FDFFE2 100%);
+      transform: scale(100%,100%);
   }
 }
 

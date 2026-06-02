@@ -1,0 +1,66 @@
+---
+import img01 from "../assets/pickup_items_img01.png";
+import img02 from "../assets/pickup_items_img02.png";
+import img03 from "../assets/pickup_items_img03.png";
+import PickUPItem from "./PickUPItem.astro";
+
+const pickupItemProps = [
+  {
+    imgPath: img01,
+    title: "DIYスタイル",
+  },
+  {
+    imgPath: img02,
+    title: "ARAS",
+  },
+  {
+    imgPath: img03,
+    title: "ランタン",
+  },
+
+]
+---
+
+<style>
+  .pickup_wrap {
+    h2 {
+      height: 35px;
+      width: 100%;
+      background-color: #859D7C;
+      margin-top: 60px;
+      color: #fff;
+      font-size: 20px;
+      padding: 3px 30px 0;
+    }
+    .pickup_items {
+      display: flex;
+      margin: 30px;
+      justify-content: space-between;
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        min-width: 100px;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+        h3 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+</style>
+
+<div class="pickup_wrap">
+  <h2>PICK UP</h2>
+  <div class="pickup_items">
+    {pickupItemProps.map((props)=>(
+        <PickUPItem imgPath={props.imgPath} title={props.title}/>
+    ))}
+  </div>
+</div>

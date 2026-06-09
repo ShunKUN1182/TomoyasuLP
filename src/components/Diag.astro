@@ -3,5 +3,18 @@ import Gorira from "./Gorira.astro"
 import Question from "./Question.astro"
 ---
 
-<Gorira />
-<Question />
+<section class="diag_wrap">
+  <Gorira />
+  <Question />
+</section>
+
+<style>
+  .diag_wrap {
+    width: min(100%, 430px);
+    margin: 0 auto;
+    padding: 1px 0 8px;
+    background:
+      linear-gradient(180deg, rgba(212, 217, 211, 0.86) 0 64px, rgba(255, 254, 250, 0) 64px),
+      var(--color-paper);
+  }
+</style>

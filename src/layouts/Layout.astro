@@ -15,3 +15,51 @@ import 'ress/dist/ress.min.css';
   <slot />
 </body>
 </html>
+
+<style is:global>
+  :root {
+    --color-ink: #312b2a;
+    --color-muted: #9fac9e;
+    --color-leaf: #829979;
+    --color-leaf-soft: #d9dfd8;
+    --color-paper: #fffefa;
+    --color-card: rgba(255, 255, 255, 0.82);
+    --shadow-soft: 0 10px 24px rgba(49, 43, 42, 0.14);
+  }
+
+  html {
+    background: #ecefeb;
+    color: var(--color-ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0 auto;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0) 0 760px, rgba(217, 223, 216, 0.72) 760px 804px, rgba(255, 255, 255, 0) 804px),
+      var(--color-paper);
+    overflow-x: hidden;
+  }
+
+  main,
+  header,
+  body > a {
+    width: min(100%, 430px);
+    margin-inline: auto;
+  }
+
+  main {
+    background: var(--color-paper);
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+</style>

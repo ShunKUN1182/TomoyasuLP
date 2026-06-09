@@ -8,5 +8,20 @@ import Diag from "../components/Diag.astro";
 <Layout>
   <Header />
   <Diag />
-  <a href="/">ホームへ</a>
+  <a class="home_link" href="/">ホームへ</a>
 </Layout>
+
+<style>
+  .home_link {
+    display: block;
+    margin: 0 auto 40px;
+    width: fit-content;
+    padding: 8px 22px;
+    border: 1px solid #cfc7b9;
+    border-radius: 999px;
+    color: #8b806f;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+</style>

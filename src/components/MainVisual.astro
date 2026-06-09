@@ -11,32 +11,41 @@ import forkAndSpun from "../assets/forkAndSpun.png";
   circleStone: `url(${circleStone.src})`,
 }}>
 .mainvisual {
-  height: 600px;
-  width: 100vw;
-  /* background-color: tomato; */
+  position: relative;
+  height: 670px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  isolation: isolate;
   h1 {
-    margin-left: 12px;
-    font-size: 32px;
+    position: relative;
+    z-index: 3;
+    margin: 82px 0 0 14px;
+    font-size: clamp(28px, 8vw, 34px);
     font-weight: bold;
-    font-family: serif;
+    font-family: Georgia, "Times New Roman", "Yu Mincho", serif;
+    line-height: 1;
+    letter-spacing: 0;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.75);
   }
   .mainVisualImg {
     position: absolute;
     border-radius: 100%;
+    overflow: hidden;
+    z-index: 1;
     img {
       width: 100%;
       height: 100%;
       border-radius: 100%;
+      object-fit: cover;
     }
   }
   .mainVisualImg01 {
-    top: -30px;
-    left: -30px;
-    width: 270px;
-    height: 270px;
+    top: -28px;
+    left: -42px;
+    width: 292px;
+    height: 292px;
     box-shadow: 0 4px 25px 0 #FFF inset;
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     &::after {
@@ -63,9 +72,11 @@ import forkAndSpun from "../assets/forkAndSpun.png";
 
   }
   .mainVisualImg02 {
-    right: -20px;
-    width: 200px;
-    height: 200px;
+    top: 156px;
+    right: -18px;
+    width: 188px;
+    height: 188px;
+    box-shadow: var(--shadow-soft);
     &::after {
       content: "";
       position: absolute;
@@ -80,10 +91,10 @@ import forkAndSpun from "../assets/forkAndSpun.png";
     }
   }
   .mainVisualImg03 {
-    top: 400px;
-    left: 20px;
-    width: 200px;
-    height: 200px;
+    top: 348px;
+    left: 24px;
+    width: 214px;
+    height: 214px;
     overflow: visible;
     &::after {
       content: "";
@@ -93,11 +104,12 @@ import forkAndSpun from "../assets/forkAndSpun.png";
       /* background-color: tomato; */
       background-image: var(--circleStone);
       background-position: center;
-      background-size: 240px;
+      background-size: 258px;
       background-repeat: no-repeat;
       height: 120%;
       width: 120%;
       animation: rotate 25s infinite linear;
+      z-index: -1;
     }
   }
 }

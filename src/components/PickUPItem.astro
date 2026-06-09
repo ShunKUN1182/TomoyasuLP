@@ -6,16 +6,26 @@ const {imgPath,title} = Astro.props;
     div {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 9px;
     justify-content: center;
     align-items: center;
-    min-width: 100px;
+    flex: 1;
+    min-width: 0;
     img {
-      width: 70px;
-      height: 70px;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(49, 43, 42, 0.14);
     }
     h3 {
-      font-size: 16px;
+      width: 100%;
+      color: #5b5751;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      white-space: nowrap;
     }
   }
 </style>

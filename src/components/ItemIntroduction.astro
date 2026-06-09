@@ -1,0 +1,57 @@
+---
+import curtainhooks from "../assets/CurtainHooks.png";
+import double_stone from "../assets/double_stone.png";
+---
+
+<style>
+  .item_wrap {
+    margin-top: 200px;
+    height: 600px;
+    background-color: #D4D9D3;
+    position: relative;
+    .head_text {
+      position: absolute;
+      top: -80px;
+      right: 0;
+      padding-left: 10px;
+      padding-right: 6px;
+      border-bottom: 10px solid #d4d9d3;
+      div {
+        display: flex;
+        gap: 4px;
+        h2 {
+          color: #b4bfb1;
+          font-size: 32px;
+        }
+        img {
+          object-fit: contain;
+          width: 40px;
+        }
+      }
+    }
+    #hooks {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      height: 120px;
+    }
+    .img_wrap {
+      margin-top: 20px;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.64);
+      border-radius: 20px;
+    }
+  }
+</style>
+<div class="item_wrap">
+  <section class="head_text">
+    <div>
+      <h2>DITスタイル</h2>
+      <img src={double_stone.src} alt="">
+    </div>
+  </section>
+  <img src={curtainhooks.src} alt="" id="hooks">
+  <div class="img_wrap">
+
+  </div>
+</div>

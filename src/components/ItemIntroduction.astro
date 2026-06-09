@@ -1,38 +1,17 @@
 ---
 import curtainhooks from "../assets/CurtainHooks.png";
-import double_stone from "../assets/double_stone.png";
-import diyMain from "../assets/mainvisual_img03.png";
-import arasMain from "../assets/mainVisual_img02.png";
-import lanternMain from "../assets/mainvisual_img01.png";
-import pickupDiy from "../assets/pickup_items_img01.png";
-import pickupAras from "../assets/pickup_items_img02.png";
-import pickupLantern from "../assets/pickup_items_img03.png";
 
-const sections = [
-  {
-    title: "DIYスタイル",
-    lead: "美濃焼風のDIYタイルシール",
-    deco: double_stone,
-    images: [diyMain, pickupDiy, pickupAras],
-  },
-  {
-    title: "ARAS",
-    lead: "軽くて割れない食器・カトラリー ARAS 深皿スクープ",
-    images: [arasMain, pickupAras, diyMain],
-  },
-  {
-    title: "ランタン",
-    lead: "天然木×マットブラックの異素材デザイン",
-    images: [lanternMain, pickupLantern, pickupDiy],
-  },
-];
+const {
+  title,
+  lead,
+  images,
+  decoImg,
+  accentImg,
+  variant = "default",
+} = Astro.props;
 ---
 
 <style>
-  .items {
-    padding-top: 142px;
-  }
-
   .item_wrap {
     position: relative;
     margin-top: 124px;
@@ -45,9 +24,9 @@ const sections = [
     .head_text {
       position: absolute;
       top: -56px;
-      right: 10px;
-      width: min(78%, 330px);
-      padding: 0 8px 0 28px;
+      right: 0;
+      width: min(75%, 308px);
+      padding: 0 0 0 28px;
       border-bottom: 10px solid #d4d9d3;
       div {
         display: flex;
@@ -59,6 +38,7 @@ const sections = [
           font-size: 30px;
           font-weight: 700;
           line-height: 1;
+          letter-spacing: 0;
           white-space: nowrap;
         }
         img {
@@ -113,51 +93,60 @@ const sections = [
     }
   }
 
-  .item_wrap:nth-child(2) .head_text {
-    right: 4px;
+  .item_wrap[data-variant="diy"] .head_text {
+    right: 0;
+    width: min(61%, 244px);
+    padding-right: 4px;
   }
 
-  .item_wrap:nth-child(2) .head_text::after {
+  .item_wrap[data-variant="aras"] .head_text {
+    right: 0;
+    width: min(54%, 232px);
+    padding-right: 22px;
+  }
+
+  .item_wrap[data-variant="aras"] .head_text::after {
     content: "";
     position: absolute;
-    right: 5px;
+    right: 0;
     bottom: -6px;
     width: 46px;
     height: 46px;
-    background: url("../assets/forkAndSpun.png") center / contain no-repeat;
+    background: var(--accent-img) center / contain no-repeat;
     transform: rotate(-24deg);
   }
 
-  .item_wrap:nth-child(3) .head_text {
-    right: 20px;
+  .item_wrap[data-variant="lantern"] .head_text {
+    right: 0;
     width: min(58%, 250px);
+    padding-right: 36px;
   }
 
-  .item_wrap:nth-child(3) .head_text::after {
+  .item_wrap[data-variant="lantern"] .head_text::after {
     content: "";
     position: absolute;
-    right: -27px;
+    right: 4px;
     bottom: -10px;
     width: 24px;
     height: 62px;
-    background: url("../assets/mainvisual_img01.png") center / cover no-repeat;
+    background: var(--accent-img) center / cover no-repeat;
   }
 </style>
 
-<div class="items">
-  {sections.map((section) => (
-    <section class="item_wrap">
-      <div class="head_text">
-        <div>
-          <h2>{section.title}</h2>
-          {section.deco && <img src={section.deco.src} alt="">}
-        </div>
-      </div>
-      <img src={curtainhooks.src} alt="" class="hooks">
-      <div class="img_wrap">
-        {section.images.map((image) => <img src={image.src} alt="">)}
-      </div>
-      <p class="caption">{section.lead}</p>
-    </section>
-  ))}
-</div>
+<section
+  class="item_wrap"
+  data-variant={variant}
+  style={`--accent-img: ${accentImg ? `url(${accentImg.src})` : "none"}`}
+>
+  <div class="head_text">
+    <div>
+      <h2>{title}</h2>
+      {decoImg && <img src={decoImg.src} alt="">}
+    </div>
+  </div>
+  <img src={curtainhooks.src} alt="" class="hooks">
+  <div class="img_wrap">
+    {images.map((image) => <img src={image.src} alt="">)}
+  </div>
+  <p class="caption">{lead}</p>
+</section>

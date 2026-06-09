@@ -1,16 +1,64 @@
 ---
+import arasMain from "../assets/mainVisual_img02.png";
+import doubleStone from "../assets/double_stone.png";
+import forkAndSpun from "../assets/forkAndSpun.png";
+import diyMain from "../assets/mainvisual_img03.png";
+import lanternMain from "../assets/mainvisual_img01.png";
+import pickupAras from "../assets/pickup_items_img02.png";
+import pickupDiy from "../assets/pickup_items_img01.png";
+import pickupLantern from "../assets/pickup_items_img03.png";
 import ItemIntroduction from "../components/ItemIntroduction.astro";
 import MainVisual from "../components/MainVisual.astro";
 import PickUp from "../components/PickUp.astro";
 import Layout from "../layouts/Layout.astro";
 
+const itemIntroductions = [
+	{
+		title: "DIYスタイル",
+		lead: "美濃焼風のDIYタイルシール",
+		variant: "diy",
+		decoImg: doubleStone,
+		images: [diyMain, pickupDiy, pickupAras],
+	},
+	{
+		title: "ARAS",
+		lead: "軽くて割れない食器・カトラリー ARAS 深皿スクープ",
+		variant: "aras",
+		accentImg: forkAndSpun,
+		images: [arasMain, pickupAras, diyMain],
+	},
+	{
+		title: "ランタン",
+		lead: "天然木×マットブラックの異素材デザイン",
+		variant: "lantern",
+		accentImg: lanternMain,
+		images: [lanternMain, pickupLantern, pickupDiy],
+	},
+];
 ---
 
 <Layout>
 	<main>
 		<MainVisual />
 		<PickUp />
-		<ItemIntroduction />
+		<div class="item_introductions">
+			{itemIntroductions.map((item) => (
+				<ItemIntroduction
+					title={item.title}
+					lead={item.lead}
+					images={item.images}
+					decoImg={item.decoImg}
+					accentImg={item.accentImg}
+					variant={item.variant}
+				/>
+			))}
+		</div>
 	</main>
 	<!-- <a href="diagnosis">診断へ</a> -->
 </Layout>
+
+<style>
+	.item_introductions {
+		padding-top: 142px;
+	}
+</style>

@@ -1,0 +1,65 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import MainGorira from "../assets/MainGorira.png";
+import HappyGorira from "../assets/HappyGorira.png";
+---
+
+<style>
+  h1 {
+    display: block;
+    margin-top: 80px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 20%;
+  }
+  picture {
+    width: 250px;
+    height: 400px;
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      object-fit: cover;
+      margin: 60px auto;
+    }
+}
+</style>
+
+<Layout>
+  <Header />
+  <main>
+    <h1>家具診断へようこそ</h1>
+    <picture>
+      <img
+        src={MainGorira.src}
+        alt="ゴリラ"
+        id="imgBtn"
+        data-main-src={MainGorira.src}
+        data-happy-src={HappyGorira.src}
+      >
+    </picture>
+  </main>
+</Layout>
+
+<script>
+  const imgBtn = document.querySelector<HTMLImageElement>("#imgBtn");
+  let isMoving = false;
+
+  imgBtn?.addEventListener("click", () => {
+    const happySrc = imgBtn.dataset.happySrc;
+
+    if (!happySrc || isMoving) {
+      return;
+    }
+
+    isMoving = true;
+    imgBtn.src = happySrc;
+
+    setTimeout(() => {
+      location.href = "/diagnosis";
+    }, 800);
+  });
+</script>

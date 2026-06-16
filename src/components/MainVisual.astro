@@ -4,6 +4,7 @@ import mainVisualImg02 from "../assets/mainvisual_img02.png";
 import mainVisualImg03 from "../assets/mainvisual_img03.png";
 import circleStone from "../assets/circle_stone.png";
 import forkAndSpun from "../assets/forkAndSpun.png";
+import changeGorira from "../assets/changeGorira.png";
 ---
 
 <style define:vars={{
@@ -102,6 +103,28 @@ import forkAndSpun from "../assets/forkAndSpun.png";
   }
 }
 
+#changeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  bottom: 25%;
+  right: 5%;
+  text-decoration: none;
+
+  img {
+    width: 100px;
+    object-fit: cover;
+  }
+  p {
+    padding: 4px 16px;
+    background-color: #B19C85;
+    border-radius: 16px;
+    color: #fff;
+  }
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -138,5 +161,8 @@ import forkAndSpun from "../assets/forkAndSpun.png";
   <picture class="mainVisualImg mainVisualImg03">
     <img src={mainVisualImg03.src} alt="">
   </picture>
-
+  <a href="Test" id="changeWrap">
+    <img src={changeGorira.src} alt="">
+    <p>詳細はこちら</p>
+  </a>
 </div>

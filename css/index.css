@@ -7,9 +7,10 @@
     position: relative;
     overflow: hidden;
     h2 {
-        font-size: 36px;
+        font-size: 32px;
         font-family: serif;
         color: #616161;
+        margin-top: 40px;
     }
     a {
         display: flex;
@@ -29,6 +30,7 @@
         div {
             font-size: 12px;
             color: #fff;
+            font-weight: bold;
             padding: 4px 24px;
             background-color: #b19c85;
             border-radius: 12px;
@@ -53,15 +55,89 @@
             width: 200px;
         }
     }
-    .object_tile_01 {
+    .object_tile {
         position: absolute;
-        left: 35%;
-        top: 160px;
         opacity: 0;
+    }
+    .object_tile_01 {
+        left: 35%;
+        top: 190px;
         animation: entityTile 0.5s forwards 1s;
         img {
             width: 50px;
             height: 50px;
+        }
+    }
+    .object_tile_02 {
+        left: 10%;
+        top: 200px;
+        animation: entityTile 0.5s forwards 1.1s;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    .object_tile_03 {
+        left: 5%;
+        top: 300px;
+        animation: entityTile 0.5s forwards 1.2s;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    .object_tile_04 {
+        left: 18%;
+        top: 375px;
+        animation: entityTile 0.5s forwards 1.3s;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .object_tile_05 {
+        left: 37%;
+        top: 400px;
+        animation: entityTile 0.5s forwards 1.4s;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .object_tile_06 {
+        left: 53%;
+        top: 370px;
+        animation: entityTile 0.5s forwards 1.5s;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    .object_tile_07 {
+        left: 76%;
+        top: 330px;
+        animation: entityTile 0.5s forwards 1.6s;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    .object_tile_08 {
+        left: 74%;
+        top: 215px;
+        animation: entityTile 0.5s forwards 1.7s;
+        img {
+            width: 90px;
+            height: 90px;
+        }
+    }
+    .object_tile_09 {
+        left: 52%;
+        top: 180px;
+        animation: entityTile 0.5s forwards 1.8s;
+        img {
+            width: 80px;
+            height: 80px;
         }
     }
 }

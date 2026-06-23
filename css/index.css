@@ -1,0 +1,111 @@
+.mainVisual {
+    height: 600px;
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    h2 {
+        font-size: 36px;
+        font-family: serif;
+        color: #616161;
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        bottom: 16px;
+        right: 24px;
+        text-decoration: none;
+        img {
+            width: 100px;
+            height: 85px;
+            animation: moveGorira 1s forwards;
+        }
+        div {
+            font-size: 12px;
+            color: #fff;
+            padding: 4px 24px;
+            background-color: #b19c85;
+            border-radius: 12px;
+        }
+    }
+    .object_light {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        transform-origin: left top;
+        animation: moveLight 1s forwards;
+        img {
+            width: 200px;
+        }
+    }
+    .object_fork {
+        position: absolute;
+        bottom: -35px;
+        left: -30px;
+        animation: moveFork 1s forwards;
+        img {
+            width: 200px;
+        }
+    }
+    .object_tile_01 {
+        position: absolute;
+        left: 35%;
+        top: 160px;
+        opacity: 0;
+        animation: entityTile 0.5s forwards 1s;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+@keyframes moveLight {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes moveGorira {
+    0% {
+        transform: translateX(140px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFork {
+    0% {
+        transform: rotate(45deg) scale(0.1);
+        left: -200px;
+        bottom: -100px;
+    }
+    100% {
+        transform: rotate(-45deg) scale(1);
+        left: -30px;
+        bottom: -35px;
+    }
+}
+
+@keyframes entityTile {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#kari {
+    background-color: tomato;
+    display: block;
+}

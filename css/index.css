@@ -328,3 +328,96 @@
         }
     }
 }
+
+.diagnosis_wrap {
+    margin-top: 120px;
+    height: 550px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/bg_diagnosis.png");
+    background-size: cover;
+    .gorira_wrap {
+        position: relative;
+        .text_wrap {
+            margin: 0 auto;
+            width: 160px;
+            height: 50px;
+            background-color: #fff;
+            border: 2px solid #bcb292;
+            border-radius: 5px;
+            position: relative;
+            p {
+                height: 100%;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 50%;
+                right: -6px;
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+                border: 2px solid #bcb292;
+                transform: translateY(50%) rotate(45deg);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                width: 30px;
+                height: 45px;
+                border-radius: 8px;
+                background-color: #fff;
+                transform: translateY(-50%);
+            }
+        }
+        .yareyareGorira {
+            position: absolute;
+            top: 50%;
+            right: 0;
+        }
+    }
+    .yareGori_wrap {
+        padding-top: 270px;
+    }
+    .jitoGori_wrap {
+        padding-top: 80px;
+        .text_wrap {
+            width: 225px;
+            margin-right: 40px;
+            &::before {
+                left: -6px;
+            }
+            &::after {
+                left: 0px;
+            }
+        }
+        .jitoGorira {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.diagnosis_btn_wrap {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 32px;
+        max-width: 320px;
+        border-radius: 10px;
+        background-color: #90776e;
+    }
+}

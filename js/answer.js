@@ -1,5 +1,8 @@
 const questionWrap = document.querySelector(".question_wrap");
-const questionItem = document.querySelectorAll(".question_item");
+const minNum = document.querySelector("#minNum");
+const maxNum = document.querySelector("#maxNum");
+let questionItem = document.querySelectorAll(".question_item");
+let count = 0;
 
 const progress = [
     {
@@ -55,8 +58,57 @@ const progress = [
     },
 ];
 
-questionItem.forEach((e) => {
-    e.addEventListener("click", () => {});
-});
+function renderProgress(count) {
+    questionWrap.innerHTML = "";
+    const progres = progress[count];
+    questionWrap.insertAdjacentHTML(
+        "beforeend",
+        `
+            <h2>${progres.title}</h2>
+            <div class="question_item" data-score="a">
+                <div class="question_img">
+                    <img src="${progres.questions[0].imgPath01}" alt="" />
+                </div>
+                <div class="question_text">
+                    <p>${progres.questions[0].question01}</p>
+                </div>
+            </div>
+            <div class="question_item" data-score="a">
+                <div class="question_img">
+                    <img src="${progres.questions[1].imgPath02}" alt="" />
+                </div>
+                <div class="question_text">
+                    <p>${progres.questions[1].question02}</p>
+                </div>
+            </div>
+            <div class="question_item" data-score="a">
+                <div class="question_img">
+                    <img src="${progres.questions[2].imgPath03}" alt="" />
+                </div>
+                <div class="question_text">
+                    <p>${progres.questions[2].question03}</p>
+                </div>
+            </div>
+        `,
+    );
+    questionItem = document.querySelectorAll(".question_item");
+    addEvent();
+}
 
-console.log(progress);
+function addEvent() {
+    questionItem.forEach((e) => {
+        e.addEventListener("click", () => {
+            count++;
+            minNum.textContent = count + 1;
+            if (count < progress.length) {
+                renderProgress(count);
+            } else {
+                alert("診断終了");
+            }
+        });
+    });
+}
+
+minNum.textContent = count + 1;
+maxNum.textContent = progress.length;
+addEvent();

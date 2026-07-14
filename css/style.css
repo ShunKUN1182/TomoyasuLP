@@ -1,5 +1,6 @@
 :root {
     --bgColor: #f3efeb;
+    /* --bgColor: #fff; */
 }
 
 header {
@@ -56,31 +57,43 @@ header {
     }
 }
 
-.mock_bg {
-    display: none;
-    background-color: skyblue;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: -100;
-}
-
 main {
     background-color: var(--bgColor);
 }
 
+.mock_wrap {
+    display: none;
+}
+
 @media screen and (min-width: 600px) {
-    .mock_bg {
-        display: block;
+    body {
+        display: grid;
+        grid-template-columns:
+            1fr
+            393px
+            1fr;
+        min-height: 100vh;
     }
-    .body_wrap {
-        margin: 0 auto;
-        width: 393px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: 100;
+    .mock_wrap {
+        display: block;
+        width: 100%;
+        position: relative;
+        .mock_bg {
+            position: fixed;
+            height: 100vh;
+            width: calc((100vw - 393px) / 2);
+            display: flex;
+            flex-direction: column;
+            z-index: -10;
+            /* background-image: url("../images/kari_bg.jpg");
+            background-size: cover; */
+            .grid_wrap {
+                .grid_item {
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid rgba(159, 143, 126, 0.33);
+                }
+            }
+        }
     }
 }

@@ -1,7 +1,6 @@
 const questionWrap = document.querySelector(".question_wrap");
 const minNum = document.querySelector("#minNum");
 const maxNum = document.querySelector("#maxNum");
-let questionItem = document.querySelectorAll(".question_item");
 let count = 0;
 
 const progress = [
@@ -11,14 +10,17 @@ const progress = [
             {
                 question01: "毎日の料理を楽しみたい",
                 imgPath01: "images/question_img01.png",
+                score: "a",
             },
             {
                 question02: "おしゃれな空間で過ごしたい",
-                imgPath02: "images/question_img01.png",
+                imgPath02: "images/question_img02.png",
+                score: "b",
             },
             {
                 question03: "自分らしく部屋作りをしたい",
-                imgPath03: "images/question_img01.png",
+                imgPath03: "images/question_img03.png",
+                score: "c",
             },
         ],
     },
@@ -28,14 +30,17 @@ const progress = [
             {
                 question01: "カフェや食事を楽しむ",
                 imgPath01: "images/question_img01.png",
+                score: "a",
             },
             {
                 question02: "部屋でゆっくりリラックスする",
                 imgPath02: "images/question_img01.png",
+                score: "b",
             },
             {
                 question03: "DIYや模様替えをする",
                 imgPath03: "images/question_img01.png",
+                score: "c",
             },
         ],
     },
@@ -45,14 +50,17 @@ const progress = [
             {
                 question01: "自然を感じる優しい雰囲気",
                 imgPath01: "images/question_img01.png",
+                score: "a",
             },
             {
                 question02: "すっきりとした洗礼された雰囲気",
                 imgPath02: "images/question_img01.png",
+                score: "b",
             },
             {
                 question03: "自分らしさを表現できる雰囲気",
                 imgPath03: "images/question_img01.png",
+                score: "c",
             },
         ],
     },
@@ -65,7 +73,7 @@ function renderProgress(count) {
         "beforeend",
         `
             <h2>${progres.title}</h2>
-            <div class="question_item" data-score="a">
+            <div class="question_item" data-score="${progres.questions[0].score}">
                 <div class="question_img">
                     <img src="${progres.questions[0].imgPath01}" alt="" />
                 </div>
@@ -73,7 +81,7 @@ function renderProgress(count) {
                     <p>${progres.questions[0].question01}</p>
                 </div>
             </div>
-            <div class="question_item" data-score="a">
+            <div class="question_item" data-score="${progres.questions[1].score}">
                 <div class="question_img">
                     <img src="${progres.questions[1].imgPath02}" alt="" />
                 </div>
@@ -81,7 +89,7 @@ function renderProgress(count) {
                     <p>${progres.questions[1].question02}</p>
                 </div>
             </div>
-            <div class="question_item" data-score="a">
+            <div class="question_item" data-score="${progres.questions[0].score}">
                 <div class="question_img">
                     <img src="${progres.questions[2].imgPath03}" alt="" />
                 </div>
@@ -91,24 +99,29 @@ function renderProgress(count) {
             </div>
         `,
     );
-    questionItem = document.querySelectorAll(".question_item");
-    addEvent();
 }
 
-function addEvent() {
-    questionItem.forEach((e) => {
-        e.addEventListener("click", () => {
-            count++;
-            minNum.textContent = count + 1;
-            if (count < progress.length) {
-                renderProgress(count);
-            } else {
-                alert("診断終了");
-            }
-        });
-    });
-}
+questionWrap.addEventListener("click", (e) => {
+    const targetDiv = document.querySelectorAll(".question_item");
+    console.log(e.target);
+});
+
+// function addEvent() {
+//     questionItem.forEach((e) => {
+//         e.addEventListener("click", () => {
+//             count++;
+//             minNum.textContent = count;
+//             if (count < progress.length) {
+//                 renderProgress(count);
+//             } else {
+//                 alert("診断終了");
+//             }
+//         });
+//     });
+// }
+
+// renderProgress(count);
+// addEvent();
 
 minNum.textContent = count + 1;
 maxNum.textContent = progress.length;
-addEvent();

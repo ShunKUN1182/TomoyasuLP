@@ -78,24 +78,32 @@ main {
         display: block;
         width: 100%;
         position: relative;
-        .mock_bg {
+        .mock {
             position: fixed;
             height: 100vh;
             width: calc((100vw - 393px) / 2);
             display: flex;
             flex-direction: column;
             z-index: -10;
-            /* background-image: url("../images/kari_bg.jpg");
-            background-size: cover; */
-            transform: rotate(45deg);
             .grid_wrap {
                 display: flex;
-                .grid_item {
-                    min-width: 120px;
-                    min-height: 120px;
-                    border: 1px solid rgba(159, 143, 126, 0.33);
+                flex-direction: column;
+                transform: 0;
+                animation: gridMove 10s infinite linear;
+                img {
+                    min-height: 100vh;
+                    object-fit: cover;
                 }
             }
         }
+    }
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
     }
 }

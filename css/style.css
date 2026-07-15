@@ -88,8 +88,7 @@ main {
             .grid_wrap {
                 display: flex;
                 flex-direction: column;
-                transform: 0;
-                animation: gridMove 10s infinite linear;
+                animation: gridMove 2s infinite linear;
                 img {
                     min-height: 100vh;
                     object-fit: cover;

@@ -2,6 +2,7 @@ const questionWrap = document.querySelector(".question_wrap");
 const minNum = document.querySelector("#minNum");
 const maxNum = document.querySelector("#maxNum");
 let count = 0;
+let score = { A: 0, B: 0, C: 0 };
 
 const progress = [
     {
@@ -108,6 +109,16 @@ questionWrap.addEventListener("click", (e) => {
     if (e.target == targetText || targetImg) {
         const targetItem = e.target.closest(".question_item");
         const targetScore = targetItem.dataset.score;
+        if (targetScore == "a") {
+            score.A += 1;
+        }
+        if (targetScore == "b") {
+            score.B += 1;
+        }
+        if (targetScore == "c") {
+            score.C += 1;
+        }
+        console.log(score);
     }
 });
 

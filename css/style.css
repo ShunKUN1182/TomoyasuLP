@@ -88,10 +88,10 @@ main {
             .grid_wrap {
                 display: flex;
                 flex-direction: column;
-                animation: gridMove 2s infinite linear;
+                animation: gridMove 50s infinite linear;
                 img {
                     min-height: 100vh;
-                    object-fit: cover;
+                    object-fit: contain;
                 }
             }
         }

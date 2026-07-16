@@ -102,8 +102,13 @@ function renderProgress(count) {
 }
 
 questionWrap.addEventListener("click", (e) => {
-    const targetDiv = document.querySelectorAll(".question_item");
+    const targetText = document.querySelectorAll(".question_text");
+    const targetImg = document.querySelectorAll(".question_img");
     console.log(e.target);
+    if (e.target == targetText || targetImg) {
+        const targetItem = e.target.closest(".question_item");
+        const targetScore = targetItem.dataset.score;
+    }
 });
 
 // function addEvent() {

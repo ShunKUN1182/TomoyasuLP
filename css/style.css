@@ -89,7 +89,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 transform: translateY(-100vh);
-                animation: gridMove 60s infinite linear;
+                animation: gridMove 60s infinite alternate linear;
                 img {
                     min-height: 100vh;
                     object-fit: cover;

@@ -35,7 +35,7 @@
             color: #fff;
             font-weight: bold;
             padding: 4px 24px;
-            background-color: #b19c85;
+            background-color: #7a6954;
             border-radius: 12px;
         }
     }
@@ -223,7 +223,7 @@
 }
 
 .pickup_banner {
-    background-color: #9f8f7e;
+    background-color: #836e57;
     color: #fff;
     padding-left: 24px;
     h2 {
@@ -279,7 +279,7 @@
             }
         }
         span {
-            background-color: #b19c85;
+            background-color: #7a6954;
             width: 42px;
             height: 42px;
             border-radius: 100%;
@@ -332,14 +332,14 @@
             align-items: center;
             text-decoration: none;
             color: #fff;
-            background-color: #9f8f7e;
+            background-color: #7a6954;
             width: 220px;
             height: 40px;
             position: relative;
             border-radius: 4px;
             transition: 0.4s;
             &:hover {
-                background-color: #ab9b8a;
+                background-color: #9f8f7e;
             }
             &::before {
                 content: "";
@@ -447,7 +447,7 @@
         text-decoration: none;
         max-width: 320px;
         border-radius: 10px;
-        background-color: #90776e;
+        background-color: #7a6761;
         opacity: 0.8;
         letter-spacing: 5%;
         position: relative;

@@ -1,3 +1,7 @@
+:root {
+    --barWidth: 0%;
+}
+
 .head_title {
     display: flex;
     align-items: center;
@@ -33,15 +37,29 @@
         background-color: #fff;
         border-radius: 12px;
         position: relative;
+        transition: 0.4s;
         &::after {
             position: absolute;
             content: "";
             top: 0;
             left: 0;
-            width: 20%;
+            width: var(--barWidth);
             height: 20px;
             border-radius: 12px;
             background-color: #715959;
+            transition: 0.4s;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            top: -8px;
+            left: calc(var(--barWidth) - 6%);
+            width: 44px;
+            height: 36px;
+            background-image: url("../images/GoriraHead.png");
+            background-size: cover;
+            z-index: 100;
+            transition: 0.4s;
         }
     }
 }

@@ -1,7 +1,9 @@
 const questionWrap = document.querySelector(".question_wrap");
 const minNum = document.querySelector("#minNum");
 const maxNum = document.querySelector("#maxNum");
+const progressBar = document.querySelector(".progress_bar");
 let count = 0;
+let barGauge = 10;
 let score = { A: 0, B: 0, C: 0 };
 
 const progress = [
@@ -118,7 +120,14 @@ questionWrap.addEventListener("click", (e) => {
         if (targetScore == "c") {
             score.C += 1;
         }
-        console.log(score);
+        count++;
+        barGauge += 40;
+        if (count == 3) {
+            location.href = "./result.html";
+        } else {
+            renderProgress(count);
+            renderValue();
+        }
     }
 });
 
@@ -138,6 +147,11 @@ questionWrap.addEventListener("click", (e) => {
 
 // renderProgress(count);
 // addEvent();
+renderProgress(count);
+function renderValue() {
+    document.documentElement.style.setProperty("--barWidth", barGauge + "%");
+    minNum.textContent = count + 1;
+    maxNum.textContent = progress.length;
+}
 
-minNum.textContent = count + 1;
-maxNum.textContent = progress.length;
+renderValue();

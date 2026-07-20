@@ -61,6 +61,49 @@ main {
     background-color: var(--bgColor);
 }
 
+footer {
+    /* background-color: #f7f6f3; */
+    background-color: #fff;
+    height: 500px;
+    margin: 0 auto;
+    .taiwan_wrap {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #453c36;
+            width: 140px;
+            padding: 8px;
+            border-radius: 32px;
+            border: 1px solid #453c36;
+            letter-spacing: 12%;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 10px;
+            letter-spacing: 8%;
+            text-align: center;
+            a {
+                text-decoration: none;
+                color: #7d9676;
+            }
+        }
+        img {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width: 160px;
+            height: 160px;
+        }
+    }
+}
+
 .mock_wrap {
     display: none;
 }

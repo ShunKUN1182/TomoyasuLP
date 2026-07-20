@@ -244,6 +244,8 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
+        text-decoration: none;
+        transition: 0.4s;
         img {
             width: 70px;
             height: 70px;
@@ -475,4 +477,3 @@
         }
     }
 }
-

@@ -1,6 +1,9 @@
 :root {
     --bgColor: #f3efeb;
-    /* --bgColor: #fff; */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 header {

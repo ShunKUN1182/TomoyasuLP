@@ -26,6 +26,14 @@ const progress = [
                 score: "c",
             },
         ],
+        results: [
+            {
+                typeName: "MOKU",
+                typeEx: "あなたは居心地のよい空間ずぐづくりを大切にするタイプです。",
+                typeLine: "木のぬくもりが、心地よい時間を灯します。",
+                imgPath: "resultImg01.png",
+            },
+        ],
     },
     {
         title: "休日はどんな過ごし方が好き？",
@@ -46,6 +54,14 @@ const progress = [
                 score: "c",
             },
         ],
+        results: [
+            {
+                typeName: "ARAS",
+                typeEx: "あなたは「使いやすさ」と「デザイン性」を大切にするタイプ",
+                typeLine: "割れにくく、美しく。毎日の食卓をもっと楽しく。",
+                imgPath: "resultImg02.png",
+            },
+        ],
     },
     {
         title: "好きなインテリアは？",
@@ -64,6 +80,14 @@ const progress = [
                 question03: "自分らしさを表現できる雰囲気",
                 imgPath03: "images/question_img01.png",
                 score: "c",
+            },
+        ],
+        results: [
+            {
+                typeName: "DIY",
+                typeEx: "あなたは自分らしい空間図づくりを楽しむクリエイティブタイプ",
+                typeLine: "壁や床を、自分だけのデザインに。",
+                imgPath: "resultImg03.png",
             },
         ],
     },
@@ -92,7 +116,7 @@ function renderProgress(count) {
                     <p>${progres.questions[1].question02}</p>
                 </div>
             </div>
-            <div class="question_item" data-score="${progres.questions[0].score}">
+            <div class="question_item" data-score="${progres.questions[2].score}">
                 <div class="question_img">
                     <img src="${progres.questions[2].imgPath03}" alt="" />
                 </div>
@@ -123,6 +147,17 @@ questionWrap.addEventListener("click", (e) => {
         count++;
         barGauge += 40;
         if (count == 3) {
+            const max = Math.max(score.A, score.B, score.C);
+            let resultNum;
+            if (max === score.A) {
+                resultNum = 0;
+            } else if (max === score.B) {
+                resultNum = 1;
+            } else {
+                resultNum = 2;
+            }
+            const setResults = progress[resultNum].results;
+            localStorage.setItem("results", JSON.stringify(setResults));
             location.href = "./result.html";
         } else {
             renderProgress(count);
@@ -131,23 +166,8 @@ questionWrap.addEventListener("click", (e) => {
     }
 });
 
-// function addEvent() {
-//     questionItem.forEach((e) => {
-//         e.addEventListener("click", () => {
-//             count++;
-//             minNum.textContent = count;
-//             if (count < progress.length) {
-//                 renderProgress(count);
-//             } else {
-//                 alert("診断終了");
-//             }
-//         });
-//     });
-// }
-
-// renderProgress(count);
-// addEvent();
 renderProgress(count);
+
 function renderValue() {
     document.documentElement.style.setProperty("--barWidth", barGauge + "%");
     minNum.textContent = count + 1;

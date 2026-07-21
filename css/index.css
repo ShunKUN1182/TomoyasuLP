@@ -374,6 +374,8 @@
     background-size: cover;
     .gorira_wrap {
         position: relative;
+        opacity: 0;
+        transition: 1.6s;
         .text_wrap {
             margin: 0 auto;
             width: 160px;
@@ -420,9 +422,11 @@
     }
     .yareGori_wrap {
         padding-top: 270px;
+        transform: translateX(-80px);
     }
     .jitoGori_wrap {
         padding-top: 80px;
+        transform: translateX(80px);
         .text_wrap {
             width: 225px;
             margin-right: 40px;
@@ -438,6 +442,11 @@
             top: 0;
             left: 0;
         }
+    }
+    .show {
+        opacity: 1;
+        transform: translate(0);
+        transform: translate(0);
     }
 }
 

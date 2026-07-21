@@ -372,10 +372,12 @@
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/bg_diagnosis.png");
     background-size: cover;
+    overflow: hidden;
     .gorira_wrap {
         position: relative;
         opacity: 0;
         transition: 1.6s;
+        overflow: hidden;
         .text_wrap {
             margin: 0 auto;
             width: 160px;
